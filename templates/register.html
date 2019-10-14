@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ClassyAds &mdash; Colorlib Website Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   {% load static %}
+  </head>
+  <body>
+
+{% include 'header.html' %}
+  <div class="site-wrap">
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 mb-5"  data-aos="fade">
+
+
+
+            <form action="{% url 'kayit' %}" method="POST" class="p-5 bg-white" style="margin-top: 80px;" >
+             {% csrf_token %}
+              <div class="row form-group">
+
+                <div class="col-md-12">
+                  <label class="text-black" for="phone">Cep Telefonu</label>
+                  <input type="phone" id="phone" name="username" value="" class="form-control" placeholder="5XXXXXXXXX">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="password">Şifre</label>
+                  <input type="password" id="password1" name="password1" value="" class="form-control" placeholder="********">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="passwordRepeat">Şifre Tekrar</label>
+                  <input type="password" id="password2" name="password2" value="" class="form-control" placeholder="********">
+                </div>
+              </div>
+               <div class="row form-group">
+               <div class="col-md-12">
+                  <label class="text-black" for="favorite">Favori Kuaför Seçin</label>
+                    <div class="select-wrap">
+                      <span class="icon"><span class="icon-keyboard_arrow_down"></span></span>
+                      <select class="form-control rounded"  name="favorite" id="">
+                        <option value="">Seçiniz</option>
+                          {% for kuafor in favori %}
+                        <option value="{{ kuafor.id }}">{{ kuafor.business_name }}</option>
+                          {% endfor %}
+
+                      </select>
+                    </div>
+                  </div>
+               </div>
+              <div class="row form-group">
+                <div class="col-12">
+                <p>Hesabın var mı? <a href="{% url 'giris'  %}">Giriş Yap</a></p>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Kayıt Ol" class="btn btn-primary py-2 px-4 text-white">
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </body>
+</html>

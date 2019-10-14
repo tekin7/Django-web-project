@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kuaförcüm &mdash; Bay,Bayan ve Araç</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  </head>
+  <body style="font-size:1.7rem;">
+{% include 'headerKuafor.html' %}
+<style>
+  .submitButton{
+  background-color: #f23a2e;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  }
+</style>
+<div class="site-wrap">
+    <div class="site-section bg-light" style="height: -webkit-fill-available;">
+      <div class="container" style="margin-top:75px;">
+        <div id="exTab2">
+            <ul class="nav nav-tabs">
+			    <li class="active">
+                    <a  href="#1" data-toggle="tab">Tarih</a>
+			    </li>
+			    <li><a href="#2" data-toggle="tab">Hizmetler</a>
+			    </li>
+			    <li><a href="#3" data-toggle="tab">Personeller</a>
+			    </li>
+              <li><a href="#4" data-toggle="tab">Fotoğraflar</a>
+			    </li>
+		    </ul>
+			<div class="tab-content ">
+                <div class="tab-pane active" id="1" style="background-color:#fff">
+                    <br>
+             <ul class="nav nav-pills" id="buttonlar" role="tablist">
+                <li class="nav-item">
+                    <button data-toggle="pill" id="1gun" href="#gun1" style="font-size:1.5rem;float:left; margin-left:10px;" class="btn btn-secondary">Bugün</button>
+                </li>
+                 <br><br>
+                <li class="nav-item" align="left">
+                   <button data-toggle="pill" id="2gun" href="#gun2" style="font-size:1.5rem;float:left; margin-left:10px;" class="btn btn-secondary">Yarın</button>
+                </li>
+                 <br><br>
+                <li class="nav-item" >
+                  <button data-toggle="pill" id="3gun" href="#gun3" style="font-size:1.5rem;float:left; margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                </li>
+                 <br><br>
+                 <li class="nav-item">
+                  <button data-toggle="pill" id="4gun" href="#gun4" style="font-size:1.5rem;float:left; margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                </li>
+                 <br><br>
+                 <li class="nav-item">
+                  <button data-toggle="pill" id="5gun" href="#gun5" style="font-size:1.5rem;float:left; margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                </li>
+                 <br><br>
+                 <li class="nav-item">
+                  <button data-toggle="pill" id="6gun" href="#gun6" style="font-size:1.5rem;float:left; margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                </li>
+                 <br><br>
+                 <li class="nav-item">
+                  <button data-toggle="pill" id="7gun" href="#gun7" style="font-size:1.5rem;float:left; margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                </li>
+              </ul>
+              <div class="tab-content">
+                  <!---------------------- GUN 1 BAŞLANGIÇ ---------------------------->
+                <div id="gun1" class="container tab-pane active"><br>
+                    <p id="gun1demo"></p>
+                   <button type="button"  class="{{gun1saat.sekiz}}"  data-id="08:00" >08:00</button>
+                    <button type="button" class="{{gun1saat.sekizB}}" data-id="08:30" >08:30</button>
+                    <button type="button" class="{{gun1saat.dokuz}}" data-id="09:00" >09:00</button>
+                    <button type="button" class="{{gun1saat.dokuzB}}" data-id="09:30" >09:30</button>
+                    <button type="button" class="{{gun1saat.on}}" data-id="10:00" >10:00</button>
+                    <button type="button" class="{{gun1saat.onB}}" data-id="10:30" >10:30</button>
+                    <button type="button" class="{{gun1saat.onbir}}" data-id="11:00" >11:00</button>
+                    <button type="button" class="{{gun1saat.onbirB}}" data-id="11:30" >11:30</button>
+                    <button type="button" class="{{gun1saat.oniki}}" data-id="12:00" >12:00</button>
+                    <button type="button" class="{{gun1saat.onikiB}}" data-id="12:30" >12:30</button>
+                    <button type="button" class="{{gun1saat.onuc}}" data-id="13:00" >13:00</button>
+                    <button type="button" class="{{gun1saat.onucB}}" data-id="13:30" >13:30</button>
+                    <button type="button" class="{{gun1saat.ondort}}" data-id="14:00" >14:00</button>
+                    <button type="button" class="{{gun1saat.ondortB}}" data-id="14:30" >14:30</button>
+                    <button type="button" class="{{gun1saat.onbes}}" data-id="15:00" >15:00</button>
+                    <button type="button" class="{{gun1saat.onbesB}}" data-id="15:30">15:30</button>
+                    <button type="button" class="{{gun1saat.onalti}}" data-id="16:00" >16:00</button>
+                    <button type="button" class="{{gun1saat.onaltiB}}" data-id="16:30" >16:30</button>
+                    <button type="button" class="{{gun1saat.onyedi}}" data-id="17:00" >17:00</button>
+                    <button type="button" class="{{gun1saat.onyediB}}" data-id="17:30" >17:30</button>
+                    <button type="button" class="{{gun1saat.onsekiz}}" data-id="18:00" >18:00</button>
+                    <button type="button" class="{{gun1saat.onsekizB}}" data-id="18:30" >18:30</button>
+                    <button type="button" class="{{gun1saat.ondokuz}}" data-id="19:00" >19:00</button>
+                    <button type="button" class="{{gun1saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                    <button type="button" class="{{gun1saat.yirmi}}" data-id="20:00" >20:00</button>
+                    <button type="button" class="{{gun1saat.yirmiB}}" data-id="20:30" >20:30</button>
+                    <button type="button" class="{{gun1saat.yirmibir}}" data-id="21:00" >21:00</button>
+                    <button type="button" class="{{gun1saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                    <button type="button" class="{{gun1saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                    <button type="button" class="{{gun1saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                    <button type="button" class="{{gun1saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                 <form  method="POST">
+                        {% csrf_token %}
+                         <input type="hidden" name="sekiz" id="1gun8" value="{{gun1saat.sekiz}}">
+                         <input type="hidden" name="sekizB" id="1gun830"value="{{gun1saat.sekizB}}" >
+                         <input type="hidden" name="dokuz" id="1gun9"  value="{{gun1saat.dokuz}}">
+                         <input type="hidden" name="dokuzB" id="1gun930" value="{{gun1saat.dokuzB}}">
+                         <input type="hidden" name="on" id="1gun10" value="{{gun1saat.on}}">
+                         <input type="hidden" name="onB" id="1gun1030"  value="{{gun1saat.onB}}">
+                         <input type="hidden" name="onbir" id="1gun11" value="{{gun1saat.onbir}}">
+                         <input type="hidden" name="onbirB" id="1gun1130" value="{{gun1saat.onbirB}}">
+                         <input type="hidden" name="oniki" id="1gun12" value="{{gun1saat.oniki}}">
+                         <input type="hidden" name="onikiB" id="1gun1230" value="{{gun1saat.onikiB}}">
+                         <input type="hidden" name="onuc" id="1gun13"  value="{{gun1saat.onuc}}">
+                         <input type="hidden" name="onucB" id="1gun1330" value="{{gun1saat.onucB}}">
+                         <input type="hidden" name="ondort" id="1gun14"  value="{{gun1saat.ondort}}">
+                         <input type="hidden" name="ondortB" id="1gun1430"value="{{gun1saat.ondortB}}">
+                         <input type="hidden" name="onbes" id="1gun15" value="{{gun1saat.onbes}}">
+                         <input type="hidden" name="onbesB" id="1gun1530" value="{{gun1saat.onbesB}}">
+                         <input type="hidden" name="onalti" id="1gun16" value="{{gun1saat.onalti}}">
+                         <input type="hidden" name="onaltiB" id="1gun1630" value="{{gun1saat.onaltiB}}">
+                         <input type="hidden" name="onyedi" id="1gun17" value="{{gun1saat.onyedi}}">
+                         <input type="hidden" name="onyediB" id="1gun1730" value="{{gun1saat.onyediB}}">
+                         <input type="hidden" name="onsekiz" id="1gun18"  value="{{gun1saat.onsekiz}}">
+                         <input type="hidden" name="onsekizB" id="1gun1830" value="{{gun1saat.onsekizB}}">
+                         <input type="hidden" name="ondokuz" id="1gun19" value="{{gun1saat.ondokuz}}">
+                         <input type="hidden" name="ondokuzB" id="1gun1930" value="{{gun1saat.ondokuzB}}">
+                         <input type="hidden" name="yirmi" id="1gun20"  value="{{gun1saat.yirmi}}">
+                         <input type="hidden" name="yirmiB" id="1gun2030" value="{{gun1saat.yirmiB}}">
+                         <input type="hidden" name="yirmibir" id="1gun21" value="{{gun1saat.yirmibir}}">
+                         <input type="hidden" name="yirmibirB" id="1gun2130"value="{{gun1saat.yirmibirB}}" >
+                         <input type="hidden" name="yirmiiki" id="1gun22" value="{{gun1saat.yirmiiki}}">
+                         <input type="hidden" name="yirmiikiB" id="1gun2230"value="{{gun1saat.yirmiikiB}}" >
+                         <input type="hidden" name="yirmiuc" id="1gun23" value="{{gun1saat.yirmiuc}}">
+
+                         <input type="hidden" name="coiffeur" value="{{gun1saat.coiffeur_id}}">
+                     <br>
+                        <input type="submit" class="submitButton" value="Kaydet" name="gun1Submit" >
+                    </form>
+
+                </div>
+                   <!---------------------- GUN 2 BAŞLANGIÇ ---------------------------->
+                <div id="gun2" class="container tab-pane fade"><br>
+                         <p id="gun2demo"></p>
+                   <button type="button"  class="{{gun2saat.sekiz}}"  data-id="08:00" >08:00</button>
+                    <button type="button" class="{{gun2saat.sekizB}}" data-id="08:30" >08:30</button>
+                    <button type="button" class="{{gun2saat.dokuz}}" data-id="09:00" >09:00</button>
+                    <button type="button" class="{{gun2saat.dokuzB}}" data-id="09:30" >09:30</button>
+                    <button type="button" class="{{gun2saat.on}}" data-id="10:00" >10:00</button>
+                    <button type="button" class="{{gun2saat.onB}}" data-id="10:30" >10:30</button>
+                    <button type="button" class="{{gun2saat.onbir}}" data-id="11:00" >11:00</button>
+                    <button type="button" class="{{gun2saat.onbirB}}" data-id="11:30" >11:30</button>
+                    <button type="button" class="{{gun2saat.oniki}}" data-id="12:00" >12:00</button>
+                    <button type="button" class="{{gun2saat.onikiB}}" data-id="12:30" >12:30</button>
+                    <button type="button" class="{{gun2saat.onuc}}" data-id="13:00" >13:00</button>
+                    <button type="button" class="{{gun2saat.onucB}}" data-id="13:30" >13:30</button>
+                    <button type="button" class="{{gun2saat.ondort}}" data-id="14:00" >14:00</button>
+                    <button type="button" class="{{gun2saat.ondortB}}" data-id="14:30" >14:30</button>
+                    <button type="button" class="{{gun2saat.ondortB}}" data-id="15:00" >15:00</button>
+                    <button type="button" class="{{gun2saat.onbesB}}" data-id="15:30">15:30</button>
+                    <button type="button" class="{{gun2saat.onalti}}" data-id="16:00" >16:00</button>
+                    <button type="button" class="{{gun2saat.onaltiB}}" data-id="16:30" >16:30</button>
+                    <button type="button" class="{{gun2saat.onyedi}}" data-id="17:00" >17:00</button>
+                    <button type="button" class="{{gun2saat.onyediB}}" data-id="17:30" >17:30</button>
+                    <button type="button" class="{{gun2saat.onsekiz}}" data-id="18:00" >18:00</button>
+                    <button type="button" class="{{gun2saat.onsekizB}}" data-id="18:30" >18:30</button>
+                    <button type="button" class="{{gun2saat.ondokuz}}" data-id="19:00" >19:00</button>
+                    <button type="button" class="{{gun2saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                    <button type="button" class="{{gun2saat.yirmi}}" data-id="20:00" >20:00</button>
+                    <button type="button" class="{{gun2saat.yirmiB}}" data-id="20:30" >20:30</button>
+                    <button type="button" class="{{gun2saat.yirmibir}}" data-id="21:00" >21:00</button>
+                    <button type="button" class="{{gun2saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                    <button type="button" class="{{gun2saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                    <button type="button" class="{{gun2saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                    <button type="button" class="{{gun2saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                 <form  method="POST">
+                        {% csrf_token %}
+                         <input type="hidden" name="sekiz" id="2gun8" value="{{gun2saat.sekiz}}">
+                         <input type="hidden" name="sekizB" id="2gun830" value="{{gun2saat.sekizB}}" >
+                         <input type="hidden" name="dokuz" id="2gun9"  value="{{gun2saat.dokuz}}">
+                         <input type="hidden" name="dokuzB" id="2gun930" value="{{gun2saat.dokuzB}}">
+                         <input type="hidden" name="on" id="2gun10" value="{{gun2saat.on}}">
+                         <input type="hidden" name="onB" id="2gun1030"  value="{{gun2saat.onB}}">
+                         <input type="hidden" name="onbir" id="2gun11" value="{{gun2saat.onbir}}">
+                         <input type="hidden" name="onbirB" id="2gun1130" value="{{gun2saat.onbirB}}">
+                         <input type="hidden" name="oniki" id="2gun12" value="{{gun2saat.oniki}}">
+                         <input type="hidden" name="onikiB" id="2gun1230" value="{{gun2saat.onikiB}}">
+                         <input type="hidden" name="onuc" id="2gun13"  value="{{gun2saat.onuc}}">
+                         <input type="hidden" name="onucB" id="2gun1330" value="{{gun2saat.onucB}}">
+                         <input type="hidden" name="ondort" id="2gun14"  value="{{gun2saat.ondort}}">
+                         <input type="hidden" name="ondortB" id="2gun1430"value="{{gun2saat.ondortB}}">
+                         <input type="hidden" name="onbes" id="2gun15" value="{{gun2saat.onbes}}">
+                         <input type="hidden" name="onbesB" id="2gun1530" value="{{gun2saat.onbesB}}">
+                         <input type="hidden" name="onalti" id="2gun16" value="{{gun2saat.onalti}}">
+                         <input type="hidden" name="onaltiB" id="2gun1630" value="{{gun2saat.onaltiB}}">
+                         <input type="hidden" name="onyedi" id="2gun17" value="{{gun2saat.onyedi}}">
+                         <input type="hidden" name="onyediB" id="2gun1730" value="{{gun2saat.onyediB}}">
+                         <input type="hidden" name="onsekiz" id="2gun18"  value="{{gun2saat.onsekiz}}">
+                         <input type="hidden" name="onsekizB" id="2gun1830" value="{{gun2saat.onsekizB}}">
+                         <input type="hidden" name="ondokuz" id="2gun19" value="{{gun2saat.ondokuz}}">
+                         <input type="hidden" name="ondokuzB" id="2gun1930" value="{{gun2saat.ondokuzB}}">
+                         <input type="hidden" name="yirmi" id="2gun20"  value="{{gun2saat.yirmi}}">
+                         <input type="hidden" name="yirmiB" id="2gun2030" value="{{gun2saat.yirmiB}}">
+                         <input type="hidden" name="yirmibir" id="2gun21" value="{{gun2saat.yirmibir}}">
+                         <input type="hidden" name="yirmibirB" id="2gun2130"value="{{gun2saat.yirmibirB}}" >
+                         <input type="hidden" name="yirmiiki" id="2gun22" value="{{gun2saat.yirmiiki}}">
+                         <input type="hidden" name="yirmiikiB" id="2gun2230"value="{{gun2saat.yirmiikiB}}" >
+                         <input type="hidden" name="yirmiuc" id="2gun23" value="{{gun2saat.yirmiuc}}">
+
+                         <input type="hidden" name="coiffeur" value="{{gun2saat.coiffeur_id}}">
+                        <input type="submit" value="Kaydet" class="submitButton" name="gun2Submit" >
+                    </form>
+                </div>
+                   <!---------------------- GUN 3 BAŞLANGIÇ ---------------------------->
+                <div id="gun3" class="container tab-pane fade"><br>
+                    <p id="gun3demo"></p>
+                   <button type="button"  class="{{gun3saat.sekiz}}"  data-id="08:00" >08:00</button>
+                    <button type="button" class="{{gun3saat.sekizB}}" data-id="08:30" >08:30</button>
+                    <button type="button" class="{{gun3saat.dokuz}}" data-id="09:00" >09:00</button>
+                    <button type="button" class="{{gun3saat.dokuzB}}" data-id="09:30" >09:30</button>
+                    <button type="button" class="{{gun3saat.on}}" data-id="10:00" >10:00</button>
+                    <button type="button" class="{{gun3saat.onB}}" data-id="10:30" >10:30</button>
+                    <button type="button" class="{{gun3saat.onbir}}" data-id="11:00" >11:00</button>
+                    <button type="button" class="{{gun3saat.onbirB}}" data-id="11:30" >11:30</button>
+                    <button type="button" class="{{gun3saat.oniki}}" data-id="12:00" >12:00</button>
+                    <button type="button" class="{{gun3saat.onikiB}}" data-id="12:30" >12:30</button>
+                    <button type="button" class="{{gun3saat.onuc}}" data-id="13:00" >13:00</button>
+                    <button type="button" class="{{gun3saat.onucB}}" data-id="13:30" >13:30</button>
+                    <button type="button" class="{{gun3saat.ondort}}" data-id="14:00" >14:00</button>
+                    <button type="button" class="{{gun3saat.ondortB}}" data-id="14:30" >14:30</button>
+                    <button type="button" class="{{gun3saat.onbes}}" data-id="15:00" >15:00</button>
+                    <button type="button" class="{{gun3saat.onbesB}}" data-id="15:30">15:30</button>
+                    <button type="button" class="{{gun3saat.onalti}}" data-id="16:00" >16:00</button>
+                    <button type="button" class="{{gun3saat.onaltiB}}" data-id="16:30" >16:30</button>
+                    <button type="button" class="{{gun3saat.onyedi}}" data-id="17:00" >17:00</button>
+                    <button type="button" class="{{gun3saat.onyediB}}" data-id="17:30" >17:30</button>
+                    <button type="button" class="{{gun3saat.onsekiz}}" data-id="18:00" >18:00</button>
+                    <button type="button" class="{{gun3saat.onsekizB}}" data-id="18:30" >18:30</button>
+                    <button type="button" class="{{gun3saat.ondokuz}}" data-id="19:00" >19:00</button>
+                    <button type="button" class="{{gun3saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                    <button type="button" class="{{gun3saat.yirmi}}" data-id="20:00" >20:00</button>
+                    <button type="button" class="{{gun3saat.yirmiB}}" data-id="20:30" >20:30</button>
+                    <button type="button" class="{{gun3saat.yirmibir}}" data-id="21:00" >21:00</button>
+                    <button type="button" class="{{gun3saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                    <button type="button" class="{{gun3saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                    <button type="button" class="{{gun3saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                    <button type="button" class="{{gun3saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                 <form  method="POST">
+                        {% csrf_token %}
+                         <input type="hidden" name="sekiz" id="3gun8" value="{{gun3saat.sekiz}}">
+                         <input type="hidden" name="sekizB" id="3gun830" value="{{gun3saat.sekizB}}" >
+                         <input type="hidden" name="dokuz" id="3gun9"  value="{{gun3saat.dokuz}}">
+                         <input type="hidden" name="dokuzB" id="3gun930" value="{{gun3saat.dokuzB}}">
+                         <input type="hidden" name="on" id="3gun10" value="{{gun3saat.on}}">
+                         <input type="hidden" name="onB" id="3gun1030"  value="{{gun3saat.onB}}">
+                         <input type="hidden" name="onbir" id="3gun11" value="{{gun3saat.onbir}}">
+                         <input type="hidden" name="onbirB" id="3gun1130" value="{{gun3saat.onbirB}}">
+                         <input type="hidden" name="oniki" id="3gun12" value="{{gun3saat.oniki}}">
+                         <input type="hidden" name="onikiB" id="3gun1230" value="{{gun3saat.onikiB}}">
+                         <input type="hidden" name="onuc" id="3gun13"  value="{{gun3saat.onuc}}">
+                         <input type="hidden" name="onucB" id="3gun1330" value="{{gun3saat.onucB}}">
+                         <input type="hidden" name="ondort" id="3gun14"  value="{{gun3saat.ondort}}">
+                         <input type="hidden" name="ondortB" id="3gun1430"value="{{gun3saat.ondortB}}">
+                         <input type="hidden" name="onbes" id="3gun15" value="{{gun3saat.onbes}}">
+                         <input type="hidden" name="onbesB" id="3gun1530" value="{{gun3saat.onbesB}}">
+                         <input type="hidden" name="onalti" id="3gun16" value="{{gun3saat.onalti}}">
+                         <input type="hidden" name="onaltiB" id="3gun1630" value="{{gun3saat.onaltiB}}">
+                         <input type="hidden" name="onyedi" id="3gun17" value="{{gun3saat.onyedi}}">
+                         <input type="hidden" name="onyediB" id="3gun1730" value="{{gun3saat.onyediB}}">
+                         <input type="hidden" name="onsekiz" id="3gun18"  value="{{gun3saat.onsekiz}}">
+                         <input type="hidden" name="onsekizB" id="3gun1830" value="{{gun3saat.onsekizB}}">
+                         <input type="hidden" name="ondokuz" id="3gun19" value="{{gun3saat.ondokuz}}">
+                         <input type="hidden" name="ondokuzB" id="3gun1930" value="{{gun3saat.ondokuzB}}">
+                         <input type="hidden" name="yirmi" id="3gun20"  value="{{gun3saat.yirmi}}">
+                         <input type="hidden" name="yirmiB" id="3gun2030" value="{{gun3saat.yirmiB}}">
+                         <input type="hidden" name="yirmibir" id="3gun21" value="{{gun3saat.yirmibir}}">
+                         <input type="hidden" name="yirmibirB" id="3gun2130"value="{{gun3saat.yirmibirB}}" >
+                         <input type="hidden" name="yirmiiki" id="3gun22" value="{{gun3saat.yirmiiki}}">
+                         <input type="hidden" name="yirmiikiB" id="3gun2230"value="{{gun3saat.yirmiikiB}}" >
+                         <input type="hidden" name="yirmiuc" id="3gun23" value="{{gun3saat.yirmiuc}}">
+
+                         <input type="hidden" name="coiffeur" value="{{gun3saat.coiffeur_id}}">
+                        <input type="submit" class="submitButton" value="Kaydet" name="gun3Submit" >
+                    </form>
+                </div>
+                   <!---------------------- GUN 4 BAŞLANGIÇ ---------------------------->
+                <div id="gun4" class="container tab-pane fade"><br>
+                    <p id="gun4demo"></p>
+                   <button type="button"  class="{{gun4saat.sekiz}}"  data-id="08:00" >08:00</button>
+                    <button type="button" class="{{gun4saat.sekizB}}" data-id="08:30" >08:30</button>
+                    <button type="button" class="{{gun4saat.dokuz}}" data-id="09:00" >09:00</button>
+                    <button type="button" class="{{gun4saat.dokuzB}}" data-id="09:30" >09:30</button>
+                    <button type="button" class="{{gun4saat.on}}" data-id="10:00" >10:00</button>
+                    <button type="button" class="{{gun4saat.onB}}" data-id="10:30" >10:30</button>
+                    <button type="button" class="{{gun4saat.onbir}}" data-id="11:00" >11:00</button>
+                    <button type="button" class="{{gun4saat.onbirB}}" data-id="11:30" >11:30</button>
+                    <button type="button" class="{{gun4saat.oniki}}" data-id="12:00" >12:00</button>
+                    <button type="button" class="{{gun4saat.onikiB}}" data-id="12:30" >12:30</button>
+                    <button type="button" class="{{gun4saat.onuc}}" data-id="13:00" >13:00</button>
+                    <button type="button" class="{{gun4saat.onucB}}" data-id="13:30" >13:30</button>
+                    <button type="button" class="{{gun4saat.ondort}}" data-id="14:00" >14:00</button>
+                    <button type="button" class="{{gun4saat.ondortB}}" data-id="14:30" >14:30</button>
+                    <button type="button" class="{{gun4saat.ondortB}}" data-id="15:00" >15:00</button>
+                    <button type="button" class="{{gun4saat.onbesB}}" data-id="15:30">15:30</button>
+                    <button type="button" class="{{gun4saat.onalti}}" data-id="16:00" >16:00</button>
+                    <button type="button" class="{{gun4saat.onaltiB}}" data-id="16:30" >16:30</button>
+                    <button type="button" class="{{gun4saat.onyedi}}" data-id="17:00" >17:00</button>
+                    <button type="button" class="{{gun4saat.onyediB}}" data-id="17:30" >17:30</button>
+                    <button type="button" class="{{gun4saat.onsekiz}}" data-id="18:00" >18:00</button>
+                    <button type="button" class="{{gun4saat.onsekizB}}" data-id="18:30" >18:30</button>
+                    <button type="button" class="{{gun4saat.ondokuz}}" data-id="19:00" >19:00</button>
+                    <button type="button" class="{{gun4saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                    <button type="button" class="{{gun4saat.yirmi}}" data-id="20:00" >20:00</button>
+                    <button type="button" class="{{gun4saat.yirmiB}}" data-id="20:30" >20:30</button>
+                    <button type="button" class="{{gun4saat.yirmibir}}" data-id="21:00" >21:00</button>
+                    <button type="button" class="{{gun4saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                    <button type="button" class="{{gun4saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                    <button type="button" class="{{gun4saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                    <button type="button" class="{{gun4saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                 <form  method="POST">
+                        {% csrf_token %}
+                         <input type="hidden" name="sekiz" id="4gun8" value="{{gun4saat.sekiz}}">
+                         <input type="hidden" name="sekizB" id="4gun830" value="{{gun4saat.sekizB}}" >
+                         <input type="hidden" name="dokuz" id="4gun9"  value="{{gun4saat.dokuz}}">
+                         <input type="hidden" name="dokuzB" id="4gun930" value="{{gun4saat.dokuzB}}">
+                         <input type="hidden" name="on" id="4gun10" value="{{gun4saat.on}}">
+                         <input type="hidden" name="onB" id="4gun1030"  value="{{gun4saat.onB}}">
+                         <input type="hidden" name="onbir" id="4gun11" value="{{gun4saat.onbir}}">
+                         <input type="hidden" name="onbirB" id="4gun1130" value="{{gun4saat.onbirB}}">
+                         <input type="hidden" name="oniki" id="4gun12" value="{{gun4saat.oniki}}">
+                         <input type="hidden" name="onikiB" id="4gun1230" value="{{gun4saat.onikiB}}">
+                         <input type="hidden" name="onuc" id="4gun13"  value="{{gun4saat.onuc}}">
+                         <input type="hidden" name="onucB" id="4gun1330" value="{{gun4saat.onucB}}">
+                         <input type="hidden" name="ondort" id="4gun14"  value="{{gun4saat.ondort}}">
+                         <input type="hidden" name="ondortB" id="4gun1430"value="{{gun4saat.ondortB}}">
+                         <input type="hidden" name="onbes" id="4gun15" value="{{gun4saat.onbes}}">
+                         <input type="hidden" name="onbesB" id="4gun1530" value="{{gun4saat.onbesB}}">
+                         <input type="hidden" name="onalti" id="4gun16" value="{{gun4saat.onalti}}">
+                         <input type="hidden" name="onaltiB" id="4gun1630" value="{{gun4saat.onaltiB}}">
+                         <input type="hidden" name="onyedi" id="4gun17" value="{{gun4saat.onyedi}}">
+                         <input type="hidden" name="onyediB" id="4gun1730" value="{{gun4saat.onyediB}}">
+                         <input type="hidden" name="onsekiz" id="4gun18"  value="{{gun4saat.onsekiz}}">
+                         <input type="hidden" name="onsekizB" id="4gun1830" value="{{gun4saat.onsekizB}}">
+                         <input type="hidden" name="ondokuz" id="4gun19" value="{{gun4saat.ondokuz}}">
+                         <input type="hidden" name="ondokuzB" id="4gun1930" value="{{gun4saat.ondokuzB}}">
+                         <input type="hidden" name="yirmi" id="4gun20"  value="{{gun4saat.yirmi}}">
+                         <input type="hidden" name="yirmiB" id="4gun2030" value="{{gun4saat.yirmiB}}">
+                         <input type="hidden" name="yirmibir" id="4gun21" value="{{gun4saat.yirmibir}}">
+                         <input type="hidden" name="yirmibirB" id="4gun2130"value="{{gun4saat.yirmibirB}}" >
+                         <input type="hidden" name="yirmiiki" id="4gun22" value="{{gun4saat.yirmiiki}}">
+                         <input type="hidden" name="yirmiikiB" id="4gun2230"value="{{gun4saat.yirmiikiB}}" >
+                         <input type="hidden" name="yirmiuc" id="4gun23" value="{{gun4saat.yirmiuc}}">
+
+                         <input type="hidden" name="coiffeur" value="{{gun4saat.coiffeur_id}}">
+                        <input type="submit" class="submitButton" value="Kaydet" name="gun4Submit" >
+                    </form>
+                </div>
+                   <!---------------------- GUN 5 BAŞLANGIÇ ---------------------------->
+                <div id="gun5" class="container tab-pane fade"><br>
+                   <p id="gun5demo"></p>
+                   <button type="button"  class="{{gun5saat.sekiz}}"  data-id="08:00" >08:00</button>
+                    <button type="button" class="{{gun5saat.sekizB}}" data-id="08:30" >08:30</button>
+                    <button type="button" class="{{gun5saat.dokuz}}" data-id="09:00" >09:00</button>
+                    <button type="button" class="{{gun5saat.dokuzB}}" data-id="09:30" >09:30</button>
+                    <button type="button" class="{{gun5saat.on}}" data-id="10:00" >10:00</button>
+                    <button type="button" class="{{gun5saat.onB}}" data-id="10:30" >10:30</button>
+                    <button type="button" class="{{gun5saat.onbir}}" data-id="11:00" >11:00</button>
+                    <button type="button" class="{{gun5saat.onbirB}}" data-id="11:30" >11:30</button>
+                    <button type="button" class="{{gun5saat.oniki}}" data-id="12:00" >12:00</button>
+                    <button type="button" class="{{gun5saat.onikiB}}" data-id="12:30" >12:30</button>
+                    <button type="button" class="{{gun5saat.onuc}}" data-id="13:00" >13:00</button>
+                    <button type="button" class="{{gun5saat.onucB}}" data-id="13:30" >13:30</button>
+                    <button type="button" class="{{gun5saat.ondort}}" data-id="14:00" >14:00</button>
+                    <button type="button" class="{{gun5saat.ondortB}}" data-id="14:30" >14:30</button>
+                    <button type="button" class="{{gun5saat.ondortB}}" data-id="15:00" >15:00</button>
+                    <button type="button" class="{{gun5saat.onbesB}}" data-id="15:30">15:30</button>
+                    <button type="button" class="{{gun5saat.onalti}}" data-id="16:00" >16:00</button>
+                    <button type="button" class="{{gun5saat.onaltiB}}" data-id="16:30" >16:30</button>
+                    <button type="button" class="{{gun5saat.onyedi}}" data-id="17:00" >17:00</button>
+                    <button type="button" class="{{gun5saat.onyediB}}" data-id="17:30" >17:30</button>
+                    <button type="button" class="{{gun5saat.onsekiz}}" data-id="18:00" >18:00</button>
+                    <button type="button" class="{{gun5saat.onsekizB}}" data-id="18:30" >18:30</button>
+                    <button type="button" class="{{gun5saat.ondokuz}}" data-id="19:00" >19:00</button>
+                    <button type="button" class="{{gun5saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                    <button type="button" class="{{gun5saat.yirmi}}" data-id="20:00" >20:00</button>
+                    <button type="button" class="{{gun5saat.yirmiB}}" data-id="20:30" >20:30</button>
+                    <button type="button" class="{{gun5saat.yirmibir}}" data-id="21:00" >21:00</button>
+                    <button type="button" class="{{gun5saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                    <button type="button" class="{{gun5saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                    <button type="button" class="{{gun5saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                    <button type="button" class="{{gun5saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                 <form  method="POST">
+                        {% csrf_token %}
+                         <input type="hidden" name="sekiz" id="5gun8" value="{{gun5saat.sekiz}}">
+                         <input type="hidden" name="sekizB" id="5gun830" value="{{gun5saat.sekizB}}" >
+                         <input type="hidden" name="dokuz" id="5gun9"  value="{{gun5saat.dokuz}}">
+                         <input type="hidden" name="dokuzB" id="5gun930" value="{{gun5saat.dokuzB}}">
+                         <input type="hidden" name="on" id="5gun10" value="{{gun5saat.on}}">
+                         <input type="hidden" name="onB" id="5gun1030"  value="{{gun5saat.onB}}">
+                         <input type="hidden" name="onbir" id="5gun11" value="{{gun5saat.onbir}}">
+                         <input type="hidden" name="onbirB" id="5gun1130" value="{{gun5saat.onbirB}}">
+                         <input type="hidden" name="oniki" id="5gun12" value="{{gun5saat.oniki}}">
+                         <input type="hidden" name="onikiB" id="5gun1230" value="{{gun5saat.onikiB}}">
+                         <input type="hidden" name="onuc" id="5gun13"  value="{{gun5saat.onuc}}">
+                         <input type="hidden" name="onucB" id="5gun1330" value="{{gun5saat.onucB}}">
+                         <input type="hidden" name="ondort" id="5gun14"  value="{{gun5saat.ondort}}">
+                         <input type="hidden" name="ondortB" id="5gun1430"value="{{gun5saat.ondortB}}">
+                         <input type="hidden" name="onbes" id="5gun15" value="{{gun5saat.onbes}}">
+                         <input type="hidden" name="onbesB" id="5gun1530" value="{{gun5saat.onbesB}}">
+                         <input type="hidden" name="onalti" id="5gun16" value="{{gun5saat.onalti}}">
+                         <input type="hidden" name="onaltiB" id="5gun1630" value="{{gun5saat.onaltiB}}">
+                         <input type="hidden" name="onyedi" id="5gun17" value="{{gun5saat.onyedi}}">
+                         <input type="hidden" name="onyediB" id="5gun1730" value="{{gun5saat.onyediB}}">
+                         <input type="hidden" name="onsekiz" id="5gun18"  value="{{gun5saat.onsekiz}}">
+                         <input type="hidden" name="onsekizB" id="5gun1830" value="{{gun5saat.onsekizB}}">
+                         <input type="hidden" name="ondokuz" id="5gun19" value="{{gun5saat.ondokuz}}">
+                         <input type="hidden" name="ondokuzB" id="5gun1930" value="{{gun5saat.ondokuzB}}">
+                         <input type="hidden" name="yirmi" id="5gun20"  value="{{gun5saat.yirmi}}">
+                         <input type="hidden" name="yirmiB" id="5gun2030" value="{{gun5saat.yirmiB}}">
+                         <input type="hidden" name="yirmibir" id="5gun21" value="{{gun5saat.yirmibir}}">
+                         <input type="hidden" name="yirmibirB" id="5un2130"value="{{gun5saat.yirmibirB}}" >
+                         <input type="hidden" name="yirmiiki" id="5gun22" value="{{gun5saat.yirmiiki}}">
+                         <input type="hidden" name="yirmiikiB" id="5gun2230"value="{{gun5saat.yirmiikiB}}" >
+                         <input type="hidden" name="yirmiuc" id="5gun23" value="{{gun5saat.yirmiuc}}">
+
+                         <input type="hidden" name="coiffeur" value="{{gun5saat.coiffeur_id}}">
+                        <input type="submit" class="submitButton" value="Kaydet" name="gun5Submit" >
+                    </form>
+                 </div>
+                   <!---------------------- GUN 6 BAŞLANGIÇ ---------------------------->
+                 <div id="gun6" class="container tab-pane fade"><br>
+                  <p id="gun6demo"></p>
+                   <button type="button"  class="{{gun6saat.sekiz}}"  data-id="08:00" >08:00</button>
+                    <button type="button" class="{{gun6saat.sekizB}}" data-id="08:30" >08:30</button>
+                    <button type="button" class="{{gun6saat.dokuz}}" data-id="09:00" >09:00</button>
+                    <button type="button" class="{{gun6saat.dokuzB}}" data-id="09:30" >09:30</button>
+                    <button type="button" class="{{gun6saat.on}}" data-id="10:00" >10:00</button>
+                    <button type="button" class="{{gun6saat.onB}}" data-id="10:30" >10:30</button>
+                    <button type="button" class="{{gun6saat.onbir}}" data-id="11:00" >11:00</button>
+                    <button type="button" class="{{gun6saat.onbirB}}" data-id="11:30" >11:30</button>
+                    <button type="button" class="{{gun6saat.oniki}}" data-id="12:00" >12:00</button>
+                    <button type="button" class="{{gun6saat.onikiB}}" data-id="12:30" >12:30</button>
+                    <button type="button" class="{{gun6saat.onuc}}" data-id="13:00" >13:00</button>
+                    <button type="button" class="{{gun6saat.onucB}}" data-id="13:30" >13:30</button>
+                    <button type="button" class="{{gun6saat.ondort}}" data-id="14:00" >14:00</button>
+                    <button type="button" class="{{gun6saat.ondortB}}" data-id="14:30" >14:30</button>
+                    <button type="button" class="{{gun6saat.ondortB}}" data-id="15:00" >15:00</button>
+                    <button type="button" class="{{gun6saat.onbesB}}" data-id="15:30">15:30</button>
+                    <button type="button" class="{{gun6saat.onalti}}" data-id="16:00" >16:00</button>
+                    <button type="button" class="{{gun6saat.onaltiB}}" data-id="16:30" >16:30</button>
+                    <button type="button" class="{{gun6saat.onyedi}}" data-id="17:00" >17:00</button>
+                    <button type="button" class="{{gun6saat.onyediB}}" data-id="17:30" >17:30</button>
+                    <button type="button" class="{{gun6saat.onsekiz}}" data-id="18:00" >18:00</button>
+                    <button type="button" class="{{gun6saat.onsekizB}}" data-id="18:30" >18:30</button>
+                    <button type="button" class="{{gun6saat.ondokuz}}" data-id="19:00" >19:00</button>
+                    <button type="button" class="{{gun6saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                    <button type="button" class="{{gun6saat.yirmi}}" data-id="20:00" >20:00</button>
+                    <button type="button" class="{{gun6saat.yirmiB}}" data-id="20:30" >20:30</button>
+                    <button type="button" class="{{gun6saat.yirmibir}}" data-id="21:00" >21:00</button>
+                    <button type="button" class="{{gun6saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                    <button type="button" class="{{gun6saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                    <button type="button" class="{{gun6saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                    <button type="button" class="{{gun6saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                 <form  method="POST">
+                        {% csrf_token %}
+                         <input type="hidden" name="sekiz" id="6gun8" value="{{gun5saat.sekiz}}">
+                         <input type="hidden" name="sekizB" id="6gun830" value="{{gun6saat.sekizB}}" >
+                         <input type="hidden" name="dokuz" id="6gun9"  value="{{gun6saat.dokuz}}">
+                         <input type="hidden" name="dokuzB" id="6gun930" value="{{gun6saat.dokuzB}}">
+                         <input type="hidden" name="on" id="6gun10" value="{{gun6saat.on}}">
+                         <input type="hidden" name="onB" id="6gun1030"  value="{{gun6saat.onB}}">
+                         <input type="hidden" name="onbir" id="6gun11" value="{{gun6saat.onbir}}">
+                         <input type="hidden" name="onbirB" id="6gun1130" value="{{gun6saat.onbirB}}">
+                         <input type="hidden" name="oniki" id="6gun12" value="{{gun6saat.oniki}}">
+                         <input type="hidden" name="onikiB" id="6gun1230" value="{{gun6saat.onikiB}}">
+                         <input type="hidden" name="onuc" id="6gun13"  value="{{gun6saat.onuc}}">
+                         <input type="hidden" name="onucB" id="6gun1330" value="{{gun6saat.onucB}}">
+                         <input type="hidden" name="ondort" id="6gun14"  value="{{gun6saat.ondort}}">
+                         <input type="hidden" name="ondortB" id="6gun1430"value="{{gun6saat.ondortB}}">
+                         <input type="hidden" name="onbes" id="6gun15" value="{{gun6saat.onbes}}">
+                         <input type="hidden" name="onbesB" id="6gun1530" value="{{gun6saat.onbesB}}">
+                         <input type="hidden" name="onalti" id="6gun16" value="{{gun6saat.onalti}}">
+                         <input type="hidden" name="onaltiB" id="6gun1630" value="{{gun6saat.onaltiB}}">
+                         <input type="hidden" name="onyedi" id="6gun17" value="{{gun6saat.onyedi}}">
+                         <input type="hidden" name="onyediB" id="6gun1730" value="{{gun6saat.onyediB}}">
+                         <input type="hidden" name="onsekiz" id="6gun18"  value="{{gun6saat.onsekiz}}">
+                         <input type="hidden" name="onsekizB" id="6gun1830" value="{{gun6saat.onsekizB}}">
+                         <input type="hidden" name="ondokuz" id="6gun19" value="{{gun6saat.ondokuz}}">
+                         <input type="hidden" name="ondokuzB" id="6gun1930" value="{{gun6saat.ondokuzB}}">
+                         <input type="hidden" name="yirmi" id="6gun20"  value="{{gun6saat.yirmi}}">
+                         <input type="hidden" name="yirmiB" id="6gun2030" value="{{gun6saat.yirmiB}}">
+                         <input type="hidden" name="yirmibir" id="6gun21" value="{{gun6saat.yirmibir}}">
+                         <input type="hidden" name="yirmibirB" id="6gun2130"value="{{gun6saat.yirmibirB}}" >
+                         <input type="hidden" name="yirmiiki" id="6gun22" value="{{gun6saat.yirmiiki}}">
+                         <input type="hidden" name="yirmiikiB" id="6gun2230"value="{{gun6saat.yirmiikiB}}" >
+                         <input type="hidden" name="yirmiuc" id="6gun23" value="{{gun6saat.yirmiuc}}">
+
+                         <input type="hidden" name="coiffeur" value="{{gun6saat.coiffeur_id}}">
+                        <input type="submit" class="submitButton" value="Kaydet" name="gun6Submit" >
+                    </form>
+                 </div>
+                   <!---------------------- GUN 7 BAŞLANGIÇ ---------------------------->
+                 <div id="gun7" class="container tab-pane fade"><br>
+                  <p id="gun7demo"></p>
+                   <button type="button"  class="{{gun7saat.sekiz}}"  data-id="08:00" >08:00</button>
+                    <button type="button" class="{{gun7saat.sekizB}}" data-id="08:30" >08:30</button>
+                    <button type="button" class="{{gun7saat.dokuz}}" data-id="09:00" >09:00</button>
+                    <button type="button" class="{{gun7saat.dokuzB}}" data-id="09:30" >09:30</button>
+                    <button type="button" class="{{gun7saat.on}}" data-id="10:00" >10:00</button>
+                    <button type="button" class="{{gun7saat.onB}}" data-id="10:30" >10:30</button>
+                    <button type="button" class="{{gun7saat.onbir}}" data-id="11:00" >11:00</button>
+                    <button type="button" class="{{gun7saat.onbirB}}" data-id="11:30" >11:30</button>
+                    <button type="button" class="{{gun7saat.oniki}}" data-id="12:00" >12:00</button>
+                    <button type="button" class="{{gun7saat.onikiB}}" data-id="12:30" >12:30</button>
+                    <button type="button" class="{{gun7saat.onuc}}" data-id="13:00" >13:00</button>
+                    <button type="button" class="{{gun7saat.onucB}}" data-id="13:30" >13:30</button>
+                    <button type="button" class="{{gun7saat.ondort}}" data-id="14:00" >14:00</button>
+                    <button type="button" class="{{gun7saat.ondortB}}" data-id="14:30" >14:30</button>
+                    <button type="button" class="{{gun7saat.ondortB}}" data-id="15:00" >15:00</button>
+                    <button type="button" class="{{gun7saat.onbesB}}" data-id="15:30">15:30</button>
+                    <button type="button" class="{{gun7saat.onalti}}" data-id="16:00" >16:00</button>
+                    <button type="button" class="{{gun7saat.onaltiB}}" data-id="16:30" >16:30</button>
+                    <button type="button" class="{{gun7saat.onyedi}}" data-id="17:00" >17:00</button>
+                    <button type="button" class="{{gun7saat.onyediB}}" data-id="17:30" >17:30</button>
+                    <button type="button" class="{{gun7saat.onsekiz}}" data-id="18:00" >18:00</button>
+                    <button type="button" class="{{gun7saat.onsekizB}}" data-id="18:30" >18:30</button>
+                    <button type="button" class="{{gun7saat.ondokuz}}" data-id="19:00" >19:00</button>
+                    <button type="button" class="{{gun7saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                    <button type="button" class="{{gun7saat.yirmi}}" data-id="20:00" >20:00</button>
+                    <button type="button" class="{{gun7saat.yirmiB}}" data-id="20:30" >20:30</button>
+                    <button type="button" class="{{gun7saat.yirmibir}}" data-id="21:00" >21:00</button>
+                    <button type="button" class="{{gun7saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                    <button type="button" class="{{gun7saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                    <button type="button" class="{{gun7saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                    <button type="button" class="{{gun7saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                 <form  method="POST">
+                        {% csrf_token %}
+                         <input type="hidden" name="sekiz" id="7gun8" value="{{gun7saat.sekiz}}">
+                         <input type="hidden" name="sekizB" id="7gun830" value="{{gun7saat.sekizB}}" >
+                         <input type="hidden" name="dokuz" id="7gun9"  value="{{gun7saat.dokuz}}">
+                         <input type="hidden" name="dokuzB" id="7gun930" value="{{gun7saat.dokuzB}}">
+                         <input type="hidden" name="on" id="7gun10" value="{{gun7saat.on}}">
+                         <input type="hidden" name="onB" id="7gun1030"  value="{{gun7saat.onB}}">
+                         <input type="hidden" name="onbir" id="7gun11" value="{{gun7saat.onbir}}">
+                         <input type="hidden" name="onbirB" id="7gun1130" value="{{gun7saat.onbirB}}">
+                         <input type="hidden" name="oniki" id="7gun12" value="{{gun7saat.oniki}}">
+                         <input type="hidden" name="onikiB" id="7gun1230" value="{{gun7saat.onikiB}}">
+                         <input type="hidden" name="onuc" id="7gun13"  value="{{gun7saat.onuc}}">
+                         <input type="hidden" name="onucB" id="7gun1330" value="{{gun7saat.onucB}}">
+                         <input type="hidden" name="ondort" id="7gun14"  value="{{gun7saat.ondort}}">
+                         <input type="hidden" name="ondortB" id="7gun1430"value="{{gun7saat.ondortB}}">
+                         <input type="hidden" name="onbes" id="7gun15" value="{{gun7saat.onbes}}">
+                         <input type="hidden" name="onbesB" id="7gun1530" value="{{gun7saat.onbesB}}">
+                         <input type="hidden" name="onalti" id="7gun16" value="{{gun7saat.onalti}}">
+                         <input type="hidden" name="onaltiB" id="7gun1630" value="{{gun7saat.onaltiB}}">
+                         <input type="hidden" name="onyedi" id="7gun17" value="{{gun7saat.onyedi}}">
+                         <input type="hidden" name="onyediB" id="7gun1730" value="{{gun7saat.onyediB}}">
+                         <input type="hidden" name="onsekiz" id="7gun18"  value="{{gun7saat.onsekiz}}">
+                         <input type="hidden" name="onsekizB" id="7gun1830" value="{{gun7saat.onsekizB}}">
+                         <input type="hidden" name="ondokuz" id="7gun19" value="{{gun7saat.ondokuz}}">
+                         <input type="hidden" name="ondokuzB" id="7gun1930" value="{{gun7saat.ondokuzB}}">
+                         <input type="hidden" name="yirmi" id="7gun20"  value="{{gun7saat.yirmi}}">
+                         <input type="hidden" name="yirmiB" id="7gun2030" value="{{gun7saat.yirmiB}}">
+                         <input type="hidden" name="yirmibir" id="7gun21" value="{{gun7saat.yirmibir}}">
+                         <input type="hidden" name="yirmibirB" id="7un2130"value="{{gun7saat.yirmibirB}}" >
+                         <input type="hidden" name="yirmiiki" id="7gun22" value="{{gun7saat.yirmiiki}}">
+                         <input type="hidden" name="yirmiikiB" id="7gun2230"value="{{gun7saat.yirmiikiB}}" >
+                         <input type="hidden" name="yirmiuc" id="7gun23" value="{{gun7saat.yirmiuc}}">
+
+                         <input type="hidden" name="coiffeur" value="{{gun7saat.coiffeur_id}}">
+                        <input class="submitButton" type="submit" value="Kaydet" name="gun7Submit" >
+                    </form>
+              </div>
+            </div>
+                </div>
+
+			  <div class="tab-pane " id="2">
+                    <div class="row">
+                    <div class="col-xs-12" style="background-color:#fff">
+                        <div class="table-responsive">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="col-md-3" style="padding:15px;">
+                                    <input type="text" style="display:none;" id="hizmetAd" name="service" class="form-control rounded" placeholder="İsim">
+                                </div>
+                                <div class="col-md-3" style="padding:15px;">
+                                    <input type="text" style="display:none;" id="hizmetFiyat" name="price" class="form-control rounded" placeholder="Fiyat">
+                                </div>
+                                    {% for kuaf in kuafor %}
+                                <input type="hidden" name="coiffeur" value="{{kuaf.id}}">
+                                {% endfor %}
+                                <div class="col-md-offset-5 col-md-1" style="padding:15px;">
+                                     <button class="btn btn-primary px-4 py-2 text-white" id="hizmetEkleButon"  style="font-size:1.5rem;"><i class="glyphicon glyphicon-plus"></i></button>
+                                     <input id="hizmetEkleİnput" name="hizmetSubmit" style="color: #fff;width:75px;height:40px;display:none;" type="submit" class="btn btn-primary btn-block rounded"  value="Hizmet Ekle">
+                                </div>
+                                </form>
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Hizmet</th>
+                                <th>Fiyat</th>
+                                  <th>İşlemler</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for hiz in hizmet %}
+                              <tr>
+                                <td>{{hiz.service}}</td>
+                                <td>{{hiz.price}} TL</td>
+                                  <td>
+                                      <button type="button" style="font-size:1.5rem;color:#fff;border-radius:20px;" class="btn btn-success"><i class="	glyphicon glyphicon-pencil"></i></button>
+                                      <button type="button" style="font-size:1.5rem;border-radius:20px;" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                                  </td>
+                              </tr>
+                            {% endfor %}
+                            </tbody>
+                          </table>
+                      </div><!--end of .table-responsive-->
+                    </div>
+                  </div>
+              </div>
+              <div class="tab-pane" id="3">
+                   <div class="row">
+                    <div class="col-xs-12" style="background-color:#fff">
+                        <div class="table-responsive">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="col-md-3" style="padding:15px;">
+                                    <input type="text" style="display:none;" id="personAd" name="name" class="form-control rounded" placeholder="İsim">
+                                </div>
+                                <div class="col-md-3" style="padding:15px;">
+                                    <input type="text" style="display:none;" id="personSoyad" name="surname" class="form-control rounded" placeholder="Soyisim">
+                                </div>
+                                    {% for kuaf in kuafor %}
+                                <input type="hidden" name="coiffeur" value="{{kuaf.id}}">
+                                {% endfor %}
+                                <div class="col-md-offset-5 col-md-1" style="padding:15px;">
+                                     <button class="btn btn-primary px-4 py-2 text-white" id="personEkleButon"  style="font-size:1.5rem;"><i class="glyphicon glyphicon-plus"></i></button>
+                                     <input id="personEkleİnput" name="personelSubmit" style="color: #fff;width:75px;height:40px;display:none;" type="submit" class="btn btn-primary btn-block rounded"  value="Personel Ekle">
+                                </div>
+                            </form>
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th>Adı</th>
+                                <th>Soyadı</th>
+                                 <th>İşlemler</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            {% for person in personel %}
+                              <tr>
+                                <td>{{person.name}}</td>
+                                <td>{{person.surname}}</td>
+                                  <td>
+                                      <button type="button" style="font-size:1.5rem;color:#fff;border-radius:20px;" class="btn btn-success"><i class="	glyphicon glyphicon-pencil"></i></button>
+                                      <button type="button" style="font-size:1.5rem;border-radius:20px;" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+                                </td>
+                              </tr>
+                            {% endfor %}
+                          </tbody>
+                          </table>
+                      </div><!--end of .table-responsive-->
+                    </div>
+                  </div>
+              </div>
+             <div class="tab-pane" id="4">
+                   <div class="row">
+                    <div class="col-xs-12" style="background-color:#fff;padding:20px">
+                     <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                       {% for kuaf in kuafor %}
+
+                      <input type="hidden" name="coiffeur" value="{{kuaf.id}}">
+                        {% endfor %}
+                      <input type="file" id="image" style="display:none;" name="image">
+                      <button id="imageUpload"  style="color: rgb(255, 255, 255); width: 95px; height: 40px;" class="btn btn-primary btn-block rounded float-right" >Fotoğraf Yükle</button>
+                      <input name="imageSubmit" id="imageSubmit" style="color: rgb(255, 255, 255); width: 95px; height: 40px;display:none;" type="submit" class="btn btn-primary btn-block rounded" value="Fotoğrafı Yükle">
+                     </form>
+                     <br>
+                     <br>
+                 <div class="container gallery-container">
+                      <div class="tz-gallery">
+                          <div class="row">
+                           {% for foto in foto %}
+                              <div class="col-sm-6 col-md-4"  >
+                                  <a class="lightbox" href="{{ foto.image.url}}">
+                                      <img src="{{ foto.image.url}}" alt="Park" style="width:70%;height:70%">
+                                  </a>
+                              </div>
+                           {% endfor %}
+                          </div>
+
+                      </div>
+                   </div>
+                    </div>
+                  </div>
+              </div>
+			</div>
+         </div>
+      </div>
+    </div>
+</div>
+  </body>
+</html>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="{% static 'kuafor-js/kuaforProfil.js' %}"></script>

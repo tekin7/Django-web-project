@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kuaförcüm &mdash; Bay,Bayan ve Araç</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  </head>
+  <body style="font-size:1.7rem;" >
+{% include 'headerKuafor.html' %}
+<div class="site-wrap">
+    <div class="site-section bg-light" style="height: -webkit-fill-available;">
+      <div class="container" style="margin-top:75px;">
+        <div id="exTab2">
+            <ul class="nav nav-tabs">
+			    <li class="active">
+                <a  href="#1" id="1gun" data-toggle="tab">İşletme Bilgileri</a>
+			    </li>
+			    <li><a href="#2" id="2gun" data-toggle="tab">Şifre Değiştir</a>
+			    </li>
+		    </ul>
+			<div class="tab-content ">
+             <div class="tab-pane active " id="1">
+                 <form action="#" class="p-5 bg-white">
+                      <div class="row form-group">
+                        <div class="col-md-8 mb-3 mb-md-0">
+                          <label class="text-black" for="business_name">İşletme Adı</label>
+                          <input type="text" name="business_name" style="font-size:1.7rem;"  class="form-control" value="{{kuafor.business_name}}">
+                        </div>
+                        <div class="col-md-4">
+                          <label class="text-black" for="phone">Telefon No</label>
+                          <input type="text" name="phone" style="font-size:1.7rem;"  class="form-control" value="{{kuafor.phone}}">
+                        </div>
+                      </div>
+                     <div class="row form-group">
+                        <div class="col-md-12">
+                          <label class="text-black" for="address">Adres</label>
+                          <textarea name="message" name="address" style="font-size:1.7rem;" cols="30" rows="7" class="form-control">{{kuafor.address}}</textarea>
+                        </div>
+                      </div>
+
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <input type="submit" style="font-size:1.7rem;"  value="Güncelle" class="btn btn-primary py-2 px-4 text-white">
+                        </div>
+                      </div>
+                    </form>
+              </div>
+			 <div class="tab-pane " id="2">
+                    <form action="#" class="p-5 bg-white">
+                      <div class="row form-group">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                          <label class="text-black" for="business_name">Eski Şifre</label>
+                          <input type="text" name="business_name" style="font-size:1.7rem;"  class="form-control" >
+                        </div>
+                      </div>
+                        <div class="row form-group">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                          <label class="text-black" for="business_name">Yeni Şifre</label>
+                          <input type="text" name="business_name" style="font-size:1.7rem;"  class="form-control" >
+                        </div>
+                      </div>
+                        <div class="row form-group">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                          <label class="text-black" for="business_name">Yeni Şifre(Tekrar)</label>
+                          <input type="text" name="business_name" style="font-size:1.7rem;"  class="form-control" >
+                        </div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col-md-12">
+                          <input type="submit" style="font-size:1.7rem;"  value="Güncelle" class="btn btn-primary py-2 px-4 text-white">
+                        </div>
+                      </div>
+                    </form>
+              </div>
+
+              </div>
+			</div>
+         </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>

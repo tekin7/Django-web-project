@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <title>ClassyAds &mdash; {{ kuafor.business_name }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% load static %}
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/slider.css"' %}>
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/set1.css' %}">
+
+    <link rel="stylesheet" href="{% static 'barcut/css/bootstrap.min.css' %}">
+        <!-- Simple line Icon -->
+    <!-- +Themify Icon -->
+    <link rel="stylesheet" href="{% static 'barcut/css/themify-icons.css' %}">
+    <!-- Hover Effects -->
+    <!-- Swipper Slider -->
+    <link rel="stylesheet" href="{% static 'barcut/css/swiper.min.css' %}">
+    <!-- +Magnific Popup CSS -->
+    <link rel="stylesheet" href="{% static 'barcut/css/magnific-popup.css' %}">
+
+    <!-- Main CSS -->
+
+</head>
+
+
+<body style="background-color: #f9f9f9">
+    {% include 'header.html' %}
+        
+      <div class="site-wrap">
+        <div class="swiper-container" style="margin-top: 85px;">
+            <div class="swiper-wrapper">
+                    {% for image in image %}
+                <div class="swiper-slide">
+                    <a href="{{image.image.url}}" class="grid image-link">
+                        <img src="{{image.image.url}}" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+    <section class="reserve-block" style="margin-top:20px; padding: 0">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-9">
+                    <h2 class="font-weight-light text-primary">{{ kuafor.business_name }}</h2>
+                    <address>
+                        <strong>Adres:</strong><span>
+                        {{ kuafor.address }} {{ kuafor.Location }} </span><br>
+                   <abbr title="Phone">Tel:</abbr> {{ kuafor.phone }}
+                      </address>
+                     
+                </div>
+                <div class="col-md-3">
+                    <div class="reserve-seat-block">
+                            <address>
+                          <strong >Web Site</strong><br>
+                          <a href="mailto:#">exam.ple@example.com</a>
+                        </address>
+                          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalSatellite">HARİTADA GÖR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <div class="site-section bg-light" style="padding: 0px" >
+        <div class="container" >
+              <section class="reserve-block" style="padding: 0; margin-block-end: 100px;"> 
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <div id="serviceDiv" style="display: none;">
+                          <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-ok-circle" style="
+                            color: #5bc0de;"
+                        ></span>
+                            Hizmet Seçimi
+
+                          </h4> 
+                          <span style="margin-left: 33px;" id="hizmetGoster"></span>
+                          <button data-toggle="modal" data-target="#randevu-modal" type="button" class="btn btn-xs btn-info" style="margin-left:15px;">Ekle/çıkar</button> 
+                          </div>
+                        <div id="personDiv" style="display: none;">
+                            <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-ok-circle" style="
+                              color: #5bc0de;
+                          "></span>
+                              Personel Seçimi
+                            </h4>
+                            <span style="margin-left: 40px;" id="personGoster"></span>
+                                <button data-toggle="modal" data-target="#randevu-modal" type="button" class="btn btn-xs btn-info" style="margin-left:15px;">Ekle/çıkar</button>
+                             </div>
+                        <div id="dateDiv" style="display: none;">
+                            <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-ok-circle" style="
+                              color: #5bc0de;
+                          "></span>
+                              Tarih Seçimi
+                            </h4>
+                            <span style="margin-left: 40px;" id="tarihGoster"></span>
+                              <button data-toggle="modal" data-target="#randevu-modal" type="button" class="btn btn-xs btn-info" style="margin-left:15px;">Ekle/çıkar</button>
+                        </div>
+                        <div id="timeDiv" style="display: none;">
+                            <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-ok-circle" style="
+                              color: #5bc0de;
+                          "></span>
+                              Saat Seçimi
+                            </h4>
+                            <span style="margin-left: 40px;" id="saatGoster"> </span>
+                                <button data-toggle="modal" data-target="#randevu-modal" type="button" class="btn btn-xs btn-info" style="margin-left:15px;">Ekle/çıkar</button>
+                            <br><br>
+                        </div>
+                            <div id="personSelectDiv" style="display: none;">
+                              <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-minus-sign" style="
+                                  color: #c73030;"></span>
+                                  Personel Seçimi
+                              </h4>
+                              <select class="col-md-10 selectpicker" name="person" style="height: 50px;" id="personSelect">
+                                    <option  >Seçiniz</option>
+                                    <option >Farketmez</option>
+                                    {% for person in personel %}
+                                    <option value="{{person.id}}">{{person}}</option>
+                                    {% endfor %}
+                              </select>
+                            </div>
+                              
+                        <div id="hizmetSecim"   >
+                            <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-minus-sign" style="
+                              color: #c73030;"
+                          ></span>
+                              Hizmet Seçimi
+                            </h4>    
+                            <hr>
+                          </div>                         
+                          <div class="row" id="hizmetList">
+                            <div class="col-md-12 d-flex text align-items-center ">
+                                <table class="table" >
+                                    {% for hizmet in hizmet%}
+                                    <tbody>
+                                      <tr>
+                                        <td  style="border-top: 1px solid #ffffff;
+                                        ">{{hizmet.service}}</td>
+                                        <td align="right" style=" border-top: 1px solid #ffffff;
+                                        "><span>{{hizmet.price}} TL </span> <button type="button" data-id="0"  class="btn btn-secondary">Seç</button></td>
+                                      </tr>
+                                    </tbody>
+                                    {% endfor %}
+                                  </table>
+                            </div>
+
+                          </div>
+                        <div class="responsive-wrap" id="timeSelectDiv" style="display:none;">
+                              <div
+                              >
+                              <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-minus-sign" style="
+                                color: #c73030;
+                            "></span>
+                                Tarih Seçimi
+                              </h4><hr>
+                            </div>
+                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                                  <div class="btn-group mr-2" id="dateSelectButton" role="group" style="display:flex; overflow-x: scroll; padding-bottom:5px;" aria-label="First group">
+                                      <button data-toggle="pill" id="1gun" onclick="openCity(event, 'London')"style= margin-left:10px;" class="btn btn-secondary">Bugün</button>
+                                      <button data-toggle="pill" id="2gun" onclick="openCity(event, 'Paris')" style="margin-left:10px;" class="btn btn-secondary">Yarın</button>
+                                      <button data-toggle="pill" id="3gun" onclick="openCity(event, 'Tokyo')" style="margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                                      <button data-toggle="pill" id="4gun" onclick="openCity(event, 'Roma')" style="margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                                      <button data-toggle="pill" id="5gun" onclick="openCity(event, 'Munih')" style="margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                                      <button data-toggle="pill" id="6gun" onclick="openCity(event, 'İstanbul')" style="margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                                      <button data-toggle="pill" id="7gun" onclick="openCity(event, 'Birmingham')" style="margin-left:10px;" class="btn btn-secondary">09/07/2019</button>
+                              </div>
+                               <div id="timeSelect" style="margin-top:5px;">
+                                  <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-minus-sign" style="
+                                    color: #c73030;
+                                "></span>
+                                    Saat Seçimi
+                                  </h4>
+                                  <hr>
+                                   <div id="London" class="tabcontent">
+                                        <button type="button"  class="{{gun1saat.sekiz}}"  data-id="08:00" >08:00</button>
+                                        <button type="button" class="{{gun1saat.sekizB}}" data-id="08:30" >08:30</button>
+                                        <button type="button" class="{{gun1saat.dokuz}}" data-id="09:00" >09:00</button>
+                                        <button type="button" class="{{gun1saat.dokuzB}}" data-id="09:30" >09:30</button>
+                                        <button type="button" class="{{gun1saat.on}}" data-id="10:00" >10:00</button>
+                                        <button type="button" class="{{gun1saat.onB}}" data-id="10:30" >10:30</button>
+                                        <button type="button" class="{{gun1saat.onbir}}" data-id="11:00" >11:00</button>
+                                        <button type="button" class="{{gun1saat.onbirB}}" data-id="11:30" >11:30</button>
+                                        <button type="button" class="{{gun1saat.oniki}}" data-id="12:00" >12:00</button>
+                                        <button type="button" class="{{gun1saat.onikiB}}" data-id="12:30" >12:30</button>
+                                        <button type="button" class="{{gun1saat.onuc}}" data-id="13:00" >13:00</button>
+                                        <button type="button" class="{{gun1saat.onucB}}" data-id="13:30" >13:30</button>
+                                        <button type="button" class="{{gun1saat.ondort}}" data-id="14:00" >14:00</button>
+                                        <button type="button" class="{{gun1saat.ondortB}}" data-id="14:30" >14:30</button>
+                                        <button type="button" class="{{gun1saat.onbes}}" data-id="15:00" >15:00</button>
+                                        <button type="button" class="{{gun1saat.onbesB}}" data-id="15:30">15:30</button>
+                                        <button type="button" class="{{gun1saat.onalti}}" data-id="16:00" >16:00</button>
+                                        <button type="button" class="{{gun1saat.onaltiB}}" data-id="16:30" >16:30</button>
+                                        <button type="button" class="{{gun1saat.onyedi}}" data-id="17:00" >17:00</button>
+                                        <button type="button" class="{{gun1saat.onyediB}}" data-id="17:30" >17:30</button>
+                                        <button type="button" class="{{gun1saat.onsekiz}}" data-id="18:00" >18:00</button>
+                                        <button type="button" class="{{gun1saat.onsekizB}}" data-id="18:30" >18:30</button>
+                                        <button type="button" class="{{gun1saat.ondokuz}}" data-id="19:00" >19:00</button>
+                                        <button type="button" class="{{gun1saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                                        <button type="button" class="{{gun1saat.yirmi}}" data-id="20:00" >20:00</button>
+                                        <button type="button" class="{{gun1saat.yirmiB}}" data-id="20:30" >20:30</button>
+                                        <button type="button" class="{{gun1saat.yirmibir}}" data-id="21:00" >21:00</button>
+                                        <button type="button" class="{{gun1saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                                        <button type="button" class="{{gun1saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                                        <button type="button" class="{{gun1saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                                        <button type="button" class="{{gun1saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                                    </div>
+
+                                    <div id="Paris" class="tabcontent">
+                                      <button type="button"  class="{{gun2saat.sekiz}}"  data-id="08:00" >08:00</button>
+                                        <button type="button" class="{{gun2saat.sekizB}}" data-id="08:30" >08:30</button>
+                                        <button type="button" class="{{gun2saat.dokuz}}" data-id="09:00" >09:00</button>
+                                        <button type="button" class="{{gun2saat.dokuzB}}" data-id="09:30" >09:30</button>
+                                        <button type="button" class="{{gun2saat.on}}" data-id="10:00" >10:00</button>
+                                        <button type="button" class="{{gun2saat.onB}}" data-id="10:30" >10:30</button>
+                                        <button type="button" class="{{gun2saat.onbir}}" data-id="11:00" >11:00</button>
+                                        <button type="button" class="{{gun2saat.onbirB}}" data-id="11:30" >11:30</button>
+                                        <button type="button" class="{{gun2saat.oniki}}" data-id="12:00" >12:00</button>
+                                        <button type="button" class="{{gun2saat.onikiB}}" data-id="12:30" >12:30</button>
+                                        <button type="button" class="{{gun2saat.onuc}}" data-id="13:00" >13:00</button>
+                                        <button type="button" class="{{gun2saat.onucB}}" data-id="13:30" >13:30</button>
+                                        <button type="button" class="{{gun2saat.ondort}}" data-id="14:00" >14:00</button>
+                                        <button type="button" class="{{gun2saat.ondortB}}" data-id="14:30" >14:30</button>
+                                        <button type="button" class="{{gun2saat.ondortB}}" data-id="15:00" >15:00</button>
+                                        <button type="button" class="{{gun2saat.onbesB}}" data-id="15:30">15:30</button>
+                                        <button type="button" class="{{gun2saat.onalti}}" data-id="16:00" >16:00</button>
+                                        <button type="button" class="{{gun2saat.onaltiB}}" data-id="16:30" >16:30</button>
+                                        <button type="button" class="{{gun2saat.onyedi}}" data-id="17:00" >17:00</button>
+                                        <button type="button" class="{{gun2saat.onyediB}}" data-id="17:30" >17:30</button>
+                                        <button type="button" class="{{gun2saat.onsekiz}}" data-id="18:00" >18:00</button>
+                                        <button type="button" class="{{gun2saat.onsekizB}}" data-id="18:30" >18:30</button>
+                                        <button type="button" class="{{gun2saat.ondokuz}}" data-id="19:00" >19:00</button>
+                                        <button type="button" class="{{gun2saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                                        <button type="button" class="{{gun2saat.yirmi}}" data-id="20:00" >20:00</button>
+                                        <button type="button" class="{{gun2saat.yirmiB}}" data-id="20:30" >20:30</button>
+                                        <button type="button" class="{{gun2saat.yirmibir}}" data-id="21:00" >21:00</button>
+                                        <button type="button" class="{{gun2saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                                        <button type="button" class="{{gun2saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                                        <button type="button" class="{{gun2saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                                        <button type="button" class="{{gun2saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                                    </div>
+
+                                    <div id="Tokyo" class="tabcontent">
+                                        <button type="button"  class="{{gun3saat.sekiz}}"  data-id="08:00" >08:00</button>
+                                        <button type="button" class="{{gun3saat.sekizB}}" data-id="08:30" >08:30</button>
+                                        <button type="button" class="{{gun3saat.dokuz}}" data-id="09:00" >09:00</button>
+                                        <button type="button" class="{{gun3saat.dokuzB}}" data-id="09:30" >09:30</button>
+                                        <button type="button" class="{{gun3saat.on}}" data-id="10:00" >10:00</button>
+                                        <button type="button" class="{{gun3saat.onB}}" data-id="10:30" >10:30</button>
+                                        <button type="button" class="{{gun3saat.onbir}}" data-id="11:00" >11:00</button>
+                                        <button type="button" class="{{gun3saat.onbirB}}" data-id="11:30" >11:30</button>
+                                        <button type="button" class="{{gun3saat.oniki}}" data-id="12:00" >12:00</button>
+                                        <button type="button" class="{{gun3saat.onikiB}}" data-id="12:30" >12:30</button>
+                                        <button type="button" class="{{gun3saat.onuc}}" data-id="13:00" >13:00</button>
+                                        <button type="button" class="{{gun3saat.onucB}}" data-id="13:30" >13:30</button>
+                                        <button type="button" class="{{gun3saat.ondort}}" data-id="14:00" >14:00</button>
+                                        <button type="button" class="{{gun3saat.ondortB}}" data-id="14:30" >14:30</button>
+                                        <button type="button" class="{{gun3saat.onbes}}" data-id="15:00" >15:00</button>
+                                        <button type="button" class="{{gun3saat.onbesB}}" data-id="15:30">15:30</button>
+                                        <button type="button" class="{{gun3saat.onalti}}" data-id="16:00" >16:00</button>
+                                        <button type="button" class="{{gun3saat.onaltiB}}" data-id="16:30" >16:30</button>
+                                        <button type="button" class="{{gun3saat.onyedi}}" data-id="17:00" >17:00</button>
+                                        <button type="button" class="{{gun3saat.onyediB}}" data-id="17:30" >17:30</button>
+                                        <button type="button" class="{{gun3saat.onsekiz}}" data-id="18:00" >18:00</button>
+                                        <button type="button" class="{{gun3saat.onsekizB}}" data-id="18:30" >18:30</button>
+                                        <button type="button" class="{{gun3saat.ondokuz}}" data-id="19:00" >19:00</button>
+                                        <button type="button" class="{{gun3saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                                        <button type="button" class="{{gun3saat.yirmi}}" data-id="20:00" >20:00</button>
+                                        <button type="button" class="{{gun3saat.yirmiB}}" data-id="20:30" >20:30</button>
+                                        <button type="button" class="{{gun3saat.yirmibir}}" data-id="21:00" >21:00</button>
+                                        <button type="button" class="{{gun3saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                                        <button type="button" class="{{gun3saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                                        <button type="button" class="{{gun3saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                                        <button type="button" class="{{gun3saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                                    </div>
+
+                                   <div id="Roma" class="tabcontent">
+                                       <button type="button"  class="{{gun4saat.sekiz}}"  data-id="08:00" >08:00</button>
+                                        <button type="button" class="{{gun4saat.sekizB}}" data-id="08:30" >08:30</button>
+                                        <button type="button" class="{{gun4saat.dokuz}}" data-id="09:00" >09:00</button>
+                                        <button type="button" class="{{gun4saat.dokuzB}}" data-id="09:30" >09:30</button>
+                                        <button type="button" class="{{gun4saat.on}}" data-id="10:00" >10:00</button>
+                                        <button type="button" class="{{gun4saat.onB}}" data-id="10:30" >10:30</button>
+                                        <button type="button" class="{{gun4saat.onbir}}" data-id="11:00" >11:00</button>
+                                        <button type="button" class="{{gun4saat.onbirB}}" data-id="11:30" >11:30</button>
+                                        <button type="button" class="{{gun4saat.oniki}}" data-id="12:00" >12:00</button>
+                                        <button type="button" class="{{gun4saat.onikiB}}" data-id="12:30" >12:30</button>
+                                        <button type="button" class="{{gun4saat.onuc}}" data-id="13:00" >13:00</button>
+                                        <button type="button" class="{{gun4saat.onucB}}" data-id="13:30" >13:30</button>
+                                        <button type="button" class="{{gun4saat.ondort}}" data-id="14:00" >14:00</button>
+                                        <button type="button" class="{{gun4saat.ondortB}}" data-id="14:30" >14:30</button>
+                                        <button type="button" class="{{gun4saat.ondortB}}" data-id="15:00" >15:00</button>
+                                        <button type="button" class="{{gun4saat.onbesB}}" data-id="15:30">15:30</button>
+                                        <button type="button" class="{{gun4saat.onalti}}" data-id="16:00" >16:00</button>
+                                        <button type="button" class="{{gun4saat.onaltiB}}" data-id="16:30" >16:30</button>
+                                        <button type="button" class="{{gun4saat.onyedi}}" data-id="17:00" >17:00</button>
+                                        <button type="button" class="{{gun4saat.onyediB}}" data-id="17:30" >17:30</button>
+                                        <button type="button" class="{{gun4saat.onsekiz}}" data-id="18:00" >18:00</button>
+                                        <button type="button" class="{{gun4saat.onsekizB}}" data-id="18:30" >18:30</button>
+                                        <button type="button" class="{{gun4saat.ondokuz}}" data-id="19:00" >19:00</button>
+                                        <button type="button" class="{{gun4saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                                        <button type="button" class="{{gun4saat.yirmi}}" data-id="20:00" >20:00</button>
+                                        <button type="button" class="{{gun4saat.yirmiB}}" data-id="20:30" >20:30</button>
+                                        <button type="button" class="{{gun4saat.yirmibir}}" data-id="21:00" >21:00</button>
+                                        <button type="button" class="{{gun4saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                                        <button type="button" class="{{gun4saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                                        <button type="button" class="{{gun4saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                                        <button type="button" class="{{gun4saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                                    </div>
+
+                                    <div id="Munih" class="tabcontent">
+                                      <h3>Munih</h3>
+                                        <button type="button"  class="{{gun5saat.sekiz}}"  data-id="08:00" >08:00</button>
+                                        <button type="button" class="{{gun5saat.sekizB}}" data-id="08:30" >08:30</button>
+                                        <button type="button" class="{{gun5saat.dokuz}}" data-id="09:00" >09:00</button>
+                                        <button type="button" class="{{gun5saat.dokuzB}}" data-id="09:30" >09:30</button>
+                                        <button type="button" class="{{gun5saat.on}}" data-id="10:00" >10:00</button>
+                                        <button type="button" class="{{gun5saat.onB}}" data-id="10:30" >10:30</button>
+                                        <button type="button" class="{{gun5saat.onbir}}" data-id="11:00" >11:00</button>
+                                        <button type="button" class="{{gun5saat.onbirB}}" data-id="11:30" >11:30</button>
+                                        <button type="button" class="{{gun5saat.oniki}}" data-id="12:00" >12:00</button>
+                                        <button type="button" class="{{gun5saat.onikiB}}" data-id="12:30" >12:30</button>
+                                        <button type="button" class="{{gun5saat.onuc}}" data-id="13:00" >13:00</button>
+                                        <button type="button" class="{{gun5saat.onucB}}" data-id="13:30" >13:30</button>
+                                        <button type="button" class="{{gun5saat.ondort}}" data-id="14:00" >14:00</button>
+                                        <button type="button" class="{{gun5saat.ondortB}}" data-id="14:30" >14:30</button>
+                                        <button type="button" class="{{gun5saat.ondortB}}" data-id="15:00" >15:00</button>
+                                        <button type="button" class="{{gun5saat.onbesB}}" data-id="15:30">15:30</button>
+                                        <button type="button" class="{{gun5saat.onalti}}" data-id="16:00" >16:00</button>
+                                        <button type="button" class="{{gun5saat.onaltiB}}" data-id="16:30" >16:30</button>
+                                        <button type="button" class="{{gun5saat.onyedi}}" data-id="17:00" >17:00</button>
+                                        <button type="button" class="{{gun5saat.onyediB}}" data-id="17:30" >17:30</button>
+                                        <button type="button" class="{{gun5saat.onsekiz}}" data-id="18:00" >18:00</button>
+                                        <button type="button" class="{{gun5saat.onsekizB}}" data-id="18:30" >18:30</button>
+                                        <button type="button" class="{{gun5saat.ondokuz}}" data-id="19:00" >19:00</button>
+                                        <button type="button" class="{{gun5saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                                        <button type="button" class="{{gun5saat.yirmi}}" data-id="20:00" >20:00</button>
+                                        <button type="button" class="{{gun5saat.yirmiB}}" data-id="20:30" >20:30</button>
+                                        <button type="button" class="{{gun5saat.yirmibir}}" data-id="21:00" >21:00</button>
+                                        <button type="button" class="{{gun5saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                                        <button type="button" class="{{gun5saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                                        <button type="button" class="{{gun5saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                                        <button type="button" class="{{gun5saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                                    </div>
+
+                                    <div id="İstanbul" class="tabcontent">
+                                        <h3>İstanbul</h3>
+                                        <button type="button"  class="{{gun6saat.sekiz}}"  data-id="08:00" >08:00</button>
+                                        <button type="button" class="{{gun6saat.sekizB}}" data-id="08:30" >08:30</button>
+                                        <button type="button" class="{{gun6saat.dokuz}}" data-id="09:00" >09:00</button>
+                                        <button type="button" class="{{gun6saat.dokuzB}}" data-id="09:30" >09:30</button>
+                                        <button type="button" class="{{gun6saat.on}}" data-id="10:00" >10:00</button>
+                                        <button type="button" class="{{gun6saat.onB}}" data-id="10:30" >10:30</button>
+                                        <button type="button" class="{{gun6saat.onbir}}" data-id="11:00" >11:00</button>
+                                        <button type="button" class="{{gun6saat.onbirB}}" data-id="11:30" >11:30</button>
+                                        <button type="button" class="{{gun6saat.oniki}}" data-id="12:00" >12:00</button>
+                                        <button type="button" class="{{gun6saat.onikiB}}" data-id="12:30" >12:30</button>
+                                        <button type="button" class="{{gun6saat.onuc}}" data-id="13:00" >13:00</button>
+                                        <button type="button" class="{{gun6saat.onucB}}" data-id="13:30" >13:30</button>
+                                        <button type="button" class="{{gun6saat.ondort}}" data-id="14:00" >14:00</button>
+                                        <button type="button" class="{{gun6saat.ondortB}}" data-id="14:30" >14:30</button>
+                                        <button type="button" class="{{gun6saat.ondortB}}" data-id="15:00" >15:00</button>
+                                        <button type="button" class="{{gun6saat.onbesB}}" data-id="15:30">15:30</button>
+                                        <button type="button" class="{{gun6saat.onalti}}" data-id="16:00" >16:00</button>
+                                        <button type="button" class="{{gun6saat.onaltiB}}" data-id="16:30" >16:30</button>
+                                        <button type="button" class="{{gun6saat.onyedi}}" data-id="17:00" >17:00</button>
+                                        <button type="button" class="{{gun6saat.onyediB}}" data-id="17:30" >17:30</button>
+                                        <button type="button" class="{{gun6saat.onsekiz}}" data-id="18:00" >18:00</button>
+                                        <button type="button" class="{{gun6saat.onsekizB}}" data-id="18:30" >18:30</button>
+                                        <button type="button" class="{{gun6saat.ondokuz}}" data-id="19:00" >19:00</button>
+                                        <button type="button" class="{{gun6saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                                        <button type="button" class="{{gun6saat.yirmi}}" data-id="20:00" >20:00</button>
+                                        <button type="button" class="{{gun6saat.yirmiB}}" data-id="20:30" >20:30</button>
+                                        <button type="button" class="{{gun6saat.yirmibir}}" data-id="21:00" >21:00</button>
+                                        <button type="button" class="{{gun6saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                                        <button type="button" class="{{gun6saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                                        <button type="button" class="{{gun6saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                                        <button type="button" class="{{gun6saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                                    </div>
+
+                                    <div id="Birmingham" class="tabcontent">
+                                        <h3>Birmingham</h3>
+                                         <button type="button"  class="{{gun7saat.sekiz}}"  data-id="08:00" >08:00</button>
+                                        <button type="button" class="{{gun7saat.sekizB}}" data-id="08:30" >08:30</button>
+                                        <button type="button" class="{{gun7saat.dokuz}}" data-id="09:00" >09:00</button>
+                                        <button type="button" class="{{gun7saat.dokuzB}}" data-id="09:30" >09:30</button>
+                                        <button type="button" class="{{gun7saat.on}}" data-id="10:00" >10:00</button>
+                                        <button type="button" class="{{gun7saat.onB}}" data-id="10:30" >10:30</button>
+                                        <button type="button" class="{{gun7saat.onbir}}" data-id="11:00" >11:00</button>
+                                        <button type="button" class="{{gun7saat.onbirB}}" data-id="11:30" >11:30</button>
+                                        <button type="button" class="{{gun7saat.oniki}}" data-id="12:00" >12:00</button>
+                                        <button type="button" class="{{gun7saat.onikiB}}" data-id="12:30" >12:30</button>
+                                        <button type="button" class="{{gun7saat.onuc}}" data-id="13:00" >13:00</button>
+                                        <button type="button" class="{{gun7saat.onucB}}" data-id="13:30" >13:30</button>
+                                        <button type="button" class="{{gun7saat.ondort}}" data-id="14:00" >14:00</button>
+                                        <button type="button" class="{{gun7saat.ondortB}}" data-id="14:30" >14:30</button>
+                                        <button type="button" class="{{gun7saat.ondortB}}" data-id="15:00" >15:00</button>
+                                        <button type="button" class="{{gun7saat.onbesB}}" data-id="15:30">15:30</button>
+                                        <button type="button" class="{{gun7saat.onalti}}" data-id="16:00" >16:00</button>
+                                        <button type="button" class="{{gun7saat.onaltiB}}" data-id="16:30" >16:30</button>
+                                        <button type="button" class="{{gun7saat.onyedi}}" data-id="17:00" >17:00</button>
+                                        <button type="button" class="{{gun7saat.onyediB}}" data-id="17:30" >17:30</button>
+                                        <button type="button" class="{{gun7saat.onsekiz}}" data-id="18:00" >18:00</button>
+                                        <button type="button" class="{{gun7saat.onsekizB}}" data-id="18:30" >18:30</button>
+                                        <button type="button" class="{{gun7saat.ondokuz}}" data-id="19:00" >19:00</button>
+                                        <button type="button" class="{{gun7saat.ondokuzB}}" data-id="19:30" >19:30</button>
+                                        <button type="button" class="{{gun7saat.yirmi}}" data-id="20:00" >20:00</button>
+                                        <button type="button" class="{{gun7saat.yirmiB}}" data-id="20:30" >20:30</button>
+                                        <button type="button" class="{{gun7saat.yirmibir}}" data-id="21:00" >21:00</button>
+                                        <button type="button" class="{{gun7saat.yirmibirB}}" data-id="21:30" >21:30</button>
+                                        <button type="button" class="{{gun7saat.yirmiiki}}" data-id="22:00" >22:00</button>
+                                        <button type="button" class="{{gun7saat.yirmiikiB}}" data-id="22:30" >22:30</button>
+                                        <button type="button" class="{{gun7saat.yirmiuc}}" data-id="23:00" >23:00</button>
+                                    </div>
+                               </div>
+                          </div>
+                      </div>
+                      <div id="randevuAl" style="display:None;">
+                         <div id= style="display:None;">
+                             <h4 style="margin-left: 10px;"><span class="glyphicon glyphicon-minus-sign" style="
+                                color: #c73030;
+                            "></span>
+                                 Cep Telefonu
+                             </h4>
+                         </div>
+
+                      <form method="post">
+                           {% csrf_token %}
+                         <div class="col-md-6 wrap-icon">
+                             {% if is_authenticated %}
+                             <input type="hidden" value="{{user.id}}" name="user">
+                            <input type="text" class="form-control rounded" value="{{user.username}}" name="phone" placeholder="Telefon Numaranız">
+                            {% else %}
+                             <input type="hidden"  name="user">
+                             <input type="text" class="form-control rounded"  name="phone" placeholder="Telefon Numaranız">
+                             {% endif %}
+                         </div>
+                        <br>
+                        <input type="hidden" value="" name="service" id="Hizmetİnput">
+                        <input type="hidden" value="" name="daystate" id="state">
+                        <input type="text" value="" name="person" id="Personelİnput">
+                        <input type="hidden" value="" name="date" id="Tarihİnput">
+                        <input type="hidden" value="" name="hour" id="Saatİnput">
+                        <input type="hidden" value="{{kuafor.id}}" name="coiffeur">
+                        <div class="col-lg-12 col-xl-3">
+                          <input style="color: #fff;"  type="submit" class="btn btn-primary btn-block rounded"  value="Randevu Al">
+                        </div>
+                          </form>
+
+                        <br>
+                        <br>
+                      </div>
+
+                    </div>
+
+                          <div id="ozet" class="col-md-4" style="background: #fff;
+                          -webkit-border-radius: 3px;
+                          -moz-border-radius: 3px;
+                          border-radius: 3px;
+                          border: 1px solid #868e96;
+                          margin-bottom:auto;;
+                          padding: 30px;
+                          position: relative;
+                          color: #666;">
+                            <h4  align="center">Özet</h4>
+                                <table class="table">
+                                  <tbody>
+                                    <tr>
+                                      <td>Salon</td>
+                                      <td id="salonOzet" align="right" ><span> {{ kuafor.business_name }} </span> </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Hizmet</td>
+                                      <td id="hizmetOzet" align="right" > </td>
+                                    </tr>
+                                    <tr>
+                                      <td>Personel</td>
+                                      <td id="personOzet" align="right" ></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Tarih</td>
+                                      <td id="tarihOzet" align="right" ></td>
+                                    </tr>
+                                    <tr>
+                                      <td>Saat</td>
+                                      <td id="saatOzet" align="right" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                        </td>
+                                        <td></td>
+                                      </tr>
+                                  </tbody>
+                                </table>                           
+                            </div>
+                      </div>
+                  </div>
+              </section>
+          
+        </div>
+      </div>
+        {% include 'footer.html' %}
+
+  </div>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+    <script src="{% static 'kuafor-js/profilCoiffeur.js' %}"></script>
+    </body>
+</html>
+<style>
+    .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+

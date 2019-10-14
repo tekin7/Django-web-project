@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kuaförcüm &mdash; Bay,Bayan ve Araç</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       {% load static %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  </head>
+  <body style="font-size:1.7rem;" >
+{% include 'headerKuafor.html' %}
+<div class="site-wrap">
+    <div class="site-section bg-light">
+      <div class="container" style="margin-top:75px;">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header">
+                <a class="card-link" id="1gun" data-toggle="collapse" href="#gun1">
+                  Collapsible Group Item #1
+                </a>
+              </div>
+              <div id="gun1" class="collapse show" data-parent="#accordion">
+                <div class="card-body">
+                   <div class="table-responsive">
+                     <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Personel</th>
+                          <th scope="col">Randevu Saati</th>
+                          <th scope="col">Hizmet</th>
+                          <th scope="col">İşlemler</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for randevu in randevular %}
+                            {% if randevu.daystate == "0" %}
+                        <tr>
+                          <th scope="row">{{randevu.phone}}</th>
+                           {% if randevu.person == None %}
+                            <td>Farketmez</td>
+                            {% else %}
+                          <td>{{randevu.person}}</td>
+                            {% endif %}
+                          <td>{{randevu.date}}<br>{{randevu.hour}}</td>
+                          <td>{{randevu.service}}</td>
+                          <td>@mdo</td>
+                        </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" id="2gun" data-toggle="collapse" href="#gun2">
+                Collapsible Group Item #2
+              </a>
+              </div>
+              <div id="gun2" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Personel</th>
+                          <th scope="col">Randevu Saati</th>
+                          <th scope="col">Hizmet</th>
+                          <th scope="col">İşlemler</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for randevu in randevular %}
+                            {% if randevu.daystate == "1" %}
+                        <tr>
+                          <th scope="row">{{randevu.phone}}</th>
+                         {% if randevu.person == None %}
+                            <td>Farketmez</td>
+                            {% else %}
+                          <td>{{randevu.person}}</td>
+                            {% endif %}
+                          <td>{{randevu.date}}<br>{{randevu.hour}}</td>
+                          <td>{{randevu.service}}</td>
+                          <td>@mdo</td>
+                        </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" id="3gun" data-toggle="collapse" href="#gun3">
+                  Collapsible Group Item #3
+                </a>
+              </div>
+              <div id="gun3" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Personel</th>
+                          <th scope="col">Randevu Saati</th>
+                          <th scope="col">Hizmet</th>
+                          <th scope="col">İşlemler</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for randevu in randevular %}
+                            {% if randevu.daystate == "2" %}
+                        <tr>
+                          <th scope="row">{{randevu.phone}}</th>
+                          {% if randevu.person == None %}
+                            <td>Farketmez</td>
+                            {% else %}
+                          <td>{{randevu.person}}</td>
+                            {% endif %}
+                          <td>{{randevu.date}}<br>{{randevu.hour}}</td>
+                          <td>{{randevu.service}}</td>
+                          <td>@mdo</td>
+                        </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" id="4gun" data-toggle="collapse" href="#gun4">
+                  Collapsible Group Item #4
+                </a>
+              </div>
+              <div id="gun4" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Personel</th>
+                          <th scope="col">Randevu Saati</th>
+                          <th scope="col">Hizmet</th>
+                          <th scope="col">İşlemler</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         {% for randevu in randevular %}
+                            {% if randevu.daystate == "3" %}
+                        <tr>
+                          <th scope="row">{{randevu.phone}}</th>
+                          {% if randevu.person == None %}
+                            <td>Farketmez</td>
+                            {% else %}
+                          <td>{{randevu.person}}</td>
+                            {% endif %}
+                          <td>{{randevu.date}}<br>{{randevu.hour}}</td>
+                          <td>{{randevu.service}}</td>
+                          <td>@mdo</td>
+                        </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" id="5gun" data-toggle="collapse" href="#gun5">
+                  Collapsible Group Item #5
+                </a>
+              </div>
+              <div id="gun5" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Personel</th>
+                          <th scope="col">Randevu Saati</th>
+                          <th scope="col">Hizmet</th>
+                          <th scope="col">İşlemler</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                         {% for randevu in randevular %}
+                            {% if randevu.daystate == "4" %}
+                        <tr>
+                          <th scope="row">{{randevu.phone}}</th>
+                             {% if randevu.person ==  None %}
+                            <td>Farketmez</td>
+                            {% else %}
+                          <td>{{randevu.person}}</td>
+                            {% endif %}
+                          <td>{{randevu.date}}<br>{{randevu.hour}}</td>
+                          <td>{{randevu.service}}</td>
+                          <td>@mdo</td>
+                        </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" id="6gun" data-toggle="collapse" href="#gun6">
+                  Collapsible Group Item #6
+                </a>
+              </div>
+              <div id="gun6" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Personel</th>
+                          <th scope="col">Randevu Saati</th>
+                          <th scope="col">Hizmet</th>
+                          <th scope="col">İşlemler</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for randevu in randevular %}
+                            {% if randevu.daystate == "5" %}
+                        <tr>
+                          <th scope="row">{{randevu.phone}}</th>
+                         {% if randevu.person == None %}
+                            <td>Farketmez</td>
+                            {% else %}
+                          <td>{{randevu.person}}</td>
+                            {% endif %}
+                          <td>{{randevu.date}}<br>{{randevu.hour}}</td>
+                          <td>{{randevu.service}}</td>
+                          <td>@mdo</td>
+                        </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed card-link" id="7gun" data-toggle="collapse" href="#gun7">
+                  Collapsible Group Item #7
+                </a>
+              </div>
+              <div id="gun7" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Telefon</th>
+                          <th scope="col">Personel</th>
+                          <th scope="col">Randevu Saati</th>
+                          <th scope="col">Hizmet</th>
+                          <th scope="col">İşlemler</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                       {% for randevu in randevular %}
+                            {% if randevu.daystate == "6" %}
+                        <tr>
+                          <th scope="row">{{randevu.phone}}</th>
+                         {% if randevu.person == None %}
+                            <td>Farketmez</td>
+                            {% else %}
+                          <td>{{randevu.person}}</td>
+                            {% endif %}
+                          <td>{{randevu.date}}<br>{{randevu.hour}}</td>
+                          <td>{{randevu.service}}</td>
+                          <td>@mdo</td>
+                        </tr>
+                        {% endif %}
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-6">
+                <h2 class="footer-heading mb-4">Biz Kimiz?</h2>
+                <p>bilmiyom :D </p>
+              </div>
+
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-4">Navigations</h2>
+                <ul class="list-unstyled">
+                  <li><a href="#">Hakkımızda</a></li>
+                  <li><a href="#">Kuaförler</a></li>
+                  <li><a href="#">Gizlilik</a></li>
+                  <li><a href="#">iletişim</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3">
+                <h2 class="footer-heading mb-10">Bizi Takip Edin</h2>
+                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="#" class="pl-3 pr-3"><span class="icon-youtube"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <form action="#" method="post">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Search products..." aria-label="Enter Email" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary text-white" type="button" id="button-addon2">Ara</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+  </body>
+</html>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+function GetDates(startDate, daysToAdd) {
+    var aryDates = [];
+
+    for (var i = 0; i <= daysToAdd; i++) {
+        var currentDate = new Date();
+        currentDate.setDate(startDate.getDate() + i);
+        aryDates.push(currentDate.getDate() + "/" + MonthAsString(currentDate.getMonth()) +' '+DayAsString(currentDate.getDay()));
+    }
+
+    return aryDates;
+}
+
+function MonthAsString(monthIndex) {
+    var d = new Date();
+    var month = new Array();
+    month[0] = "01";
+    month[1] = "02";
+    month[2] = "03";
+    month[3] = "04";
+    month[4] = "05";
+    month[5] = "06";
+    month[6] = "07";
+    month[7] = "08";
+    month[8] = "09";
+    month[9] = "10";
+    month[10] = "11";
+    month[11] = "12";
+
+    return month[monthIndex];
+}
+
+function DayAsString(dayIndex) {
+    var weekdays = new Array(7);
+    weekdays[0] = "Pzr";
+    weekdays[1] = "Pts";
+    weekdays[2] = "Sal";
+    weekdays[3] = "Crs";
+    weekdays[4] = "Prs";
+    weekdays[5] = "Cum";
+    weekdays[6] = "Cts";
+
+    return weekdays[dayIndex];
+}
+
+var startDate = new Date();
+var aryDates = GetDates(startDate, 7);
+document.getElementById("1gun").innerHTML = "Bugün";
+document.getElementById("2gun").innerHTML = "Yarın";
+document.getElementById("3gun").innerHTML = aryDates[2];
+document.getElementById("4gun").innerHTML = aryDates[3];
+document.getElementById("5gun").innerHTML = aryDates[4];
+document.getElementById("6gun").innerHTML = aryDates[5];
+document.getElementById("7gun").innerHTML = aryDates[6];
+</script>
